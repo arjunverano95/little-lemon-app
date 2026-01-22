@@ -6,6 +6,14 @@ import Footer from "../../components/Footer";
 import ScrollToTop from "../../components/ScrollToTop";
 import { updateTimes, initializeTimes } from "../../utils/temp";
 
+/**
+ * Bookingpage Component
+ *
+ * Booking page that displays the booking form with header, footer, and scroll-to-top button.
+ * Manages available times state using useReducer and passes it to the BookingForm component.
+ *
+ * @returns {ReactElement} The booking page component
+ */
 const Bookingpage: FC = (): ReactElement => {
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 

@@ -6,6 +6,8 @@ A modern, responsive restaurant website for Little Lemon, a family-owned Mediter
 
 Little Lemon is a restaurant website featuring a beautiful, modern design with smooth scrolling navigation, online reservations, customer testimonials, and contact information. The website showcases the restaurant's specials, story, and provides an easy way for customers to book a table.
 
+**Developed by [Arjun Verano](https://github.com/arjunverano95)**
+
 ## ✨ Features
 
 - **Responsive Design**: Fully responsive layout that works seamlessly on desktop, tablet, and mobile devices
@@ -74,26 +76,39 @@ npm install
 
 ```
 src/
-├── assets/          # Images, logos, and other static assets
-├── components/      # Reusable React components
-│   ├── BookingForm/     # Reservation form component
-│   ├── CallToAction/    # Hero section with CTA
-│   ├── Chicago/         # About section
-│   ├── Contact/         # Contact information section
-│   ├── CustomersSay/    # Testimonials section
-│   ├── Footer/         # Footer component
-│   ├── Header/         # Header with navigation
-│   ├── ScrollToTop/    # Scroll to top button
-│   └── Specials/        # Weekly specials section
-├── pages/           # Page components
-│   ├── Home/            # Home page
-│   ├── Bookingpage/     # Booking page
-│   └── ConfirmationPage/# Booking confirmation page
-├── styles/          # Theme and styling configuration
-│   └── chakra-theme.ts  # Chakra UI theme customization
-├── utils/           # Utility functions
-├── routes.tsx       # Route configuration
-└── main.tsx         # Application entry point
+├── assets/                    # Images, logos, and other static assets
+│   └── logo/                  # Logo variations
+├── components/                # Reusable React components (organized by category)
+│   ├── booking/               # Booking-related components
+│   │   ├── BookingForm/       # Reservation form with validation
+│   │   └── BookingConfirmation/ # Booking confirmation page component
+│   ├── cards/                 # Reusable card components
+│   │   ├── SpecialCard/       # Food item card component
+│   │   └── TestimonialCard/   # Customer testimonial card
+│   ├── layout/                # Layout components
+│   │   ├── Footer/            # Footer with links and contact info
+│   │   ├── Header/            # Fixed header with scroll behavior
+│   │   ├── Navigation/        # Desktop navigation
+│   │   └── MobileNavigation/  # Mobile navigation drawer
+│   ├── sections/              # Page section components
+│   │   ├── About/             # About section (restaurant story)
+│   │   ├── CallToAction/      # Hero section with CTA
+│   │   ├── Contact/           # Contact information section
+│   │   ├── Testimonials/      # Customer testimonials section
+│   │   └── WeeklySpecials/    # Weekly specials showcase
+│   └── ui/                    # UI utility components
+│       └── ScrollToTop/       # Scroll to top button
+├── pages/                     # Page components
+│   ├── HomePage/              # Main landing page
+│   ├── BookingPage/           # Booking form page
+│   └── BookingConfirmationPage/ # Booking confirmation page
+├── styles/                    # Theme and styling configuration
+│   └── chakra-theme.ts        # Chakra UI theme customization
+├── utils/                     # Utility functions
+│   ├── temp.ts                # Mock API functions (fetchAPI, submitAPI)
+│   └── tests-ts.tsx           # Test utilities and setup
+├── routes.tsx                 # Route configuration
+└── main.tsx                   # Application entry point
 ```
 
 ## 🎨 Design Features
@@ -105,25 +120,57 @@ src/
 
 ## 🧪 Testing
 
-The project includes unit tests for components. Run tests with:
+The project includes comprehensive unit tests for components. Test coverage includes:
+
+- **BookingForm**: Form rendering, validation (guests min/max), and submission
+- **BookingConfirmation**: Confirmation message and booking details display
+- **CallToAction**: Hero section rendering and navigation
+- **Contact**: Contact information display and links
+- **Footer**: Footer content, links, and social media icons
+- **SpecialCard**: Food card rendering and price formatting
+- **TestimonialCard**: Testimonial display and rating stars
+
+Run tests with:
 
 ```bash
 npm test
 ```
 
+All 45 tests are currently passing.
+
 ## 📝 Development Notes
 
-- The project uses React 19 with TypeScript for type safety
-- Chakra UI provides a comprehensive component library with theming support
-- Smooth scrolling is implemented for anchor links with offset for fixed header
-- Form validation is handled by Formik and Yup
-- The build process uses Vite for fast development and optimized production builds
+### Architecture & Organization
+- **Component Organization**: Components are organized into logical folders:
+  - `booking/` - Booking-related functionality
+  - `cards/` - Reusable card components
+  - `layout/` - Layout and navigation components
+  - `sections/` - Page section components
+  - `ui/` - UI utility components
+- **Naming Convention**: All components and pages use PascalCase with descriptive names
+- **TypeScript**: Full type safety with TypeScript throughout the project
+- **JSDoc Comments**: Comprehensive documentation for all components and functions
 
-## 👨‍💻 Developed By
+### Key Features Implementation
+- **React 19**: Latest React features with TypeScript for type safety
+- **Chakra UI v2**: Comprehensive component library with custom theming
+- **Smooth Scrolling**: Anchor links with offset calculation for fixed header
+- **Form Validation**: Formik and Yup for robust form handling and validation
+- **Responsive Design**: Mobile-first approach with Chakra UI breakpoints
+- **Accessibility**: Semantic HTML, ARIA labels, and keyboard navigation support
+- **Performance**: Vite for fast development and optimized production builds
+
+### Code Quality
+- **ESLint 9**: Flat config format with TypeScript and React rules
+- **Jest**: Comprehensive test suite with React Testing Library
+- **Type Safety**: Full TypeScript coverage with strict mode
+
+## 👨‍💻 Author
 
 **Arjun Verano**
 
 - GitHub: [@arjunverano95](https://github.com/arjunverano95)
+- Project: [Little Lemon Restaurant](https://github.com/arjunverano95/little-lemon)
 
 ## 📄 License
 
