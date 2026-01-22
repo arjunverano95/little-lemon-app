@@ -9,7 +9,7 @@ import {
   Button,
   Image,
 } from "@chakra-ui/react";
-import restaurant_food from "../../../assets/restaurantfood.jpg";
+import restaurant_food from "../../../assets/restaurant chef B.jpg";
 
 /**
  * CallToAction Component
