@@ -1,9 +1,9 @@
 import { useReducer, FC, ReactElement } from "react";
 import { Box } from "@chakra-ui/react";
-import Header from "../../components/Header";
-import BookingForm from "../../components/BookingForm";
-import Footer from "../../components/Footer";
-import ScrollToTop from "../../components/ScrollToTop";
+import Header from "../../components/layout/Header";
+import BookingForm from "../../components/booking/BookingForm";
+import Footer from "../../components/layout/Footer";
+import ScrollToTop from "../../components/ui/ScrollToTop";
 import { updateTimes, initializeTimes } from "../../utils/temp";
 
 /**
